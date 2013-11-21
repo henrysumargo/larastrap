@@ -19,13 +19,8 @@
         </div>
 
         <div class="form-group">
-            <label for="first_name">{{{ Lang::get('confide::confide.first_name') }}}</label>
-            <input class="form-control" placeholder="{{{ Lang::get('confide::confide.first_name') }}}" type="text" name="first_name" id="first_name">
-        </div>
-
-        <div class="form-group">
-            <label for="last_name">{{{ Lang::get('confide::confide.last_name') }}}</label>
-            <input class="form-control" placeholder="{{{ Lang::get('confide::confide.last_name') }}}" type="text" name="last_name" id="last_name">
+            <label for="name">{{{ Lang::get('confide::confide.name') }}}</label>
+            <input class="form-control" placeholder="{{{ Lang::get('confide::confide.name') }}}" type="text" name="name" id="name">
         </div>
 
         @if ( Session::get('error') )

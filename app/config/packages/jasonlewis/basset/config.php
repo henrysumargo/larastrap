@@ -40,6 +40,7 @@ return array(
             {
                 // $collection->javascript('http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js');
                 $collection->add('jquery-1.10.2.min.js');
+                $collection->add('customer.js');
                 // $collection->add('jquery-1.10.2.min.map');
                 //$collection->add('bootstrap/bootstrap.js');
                 // $collection->requireDirectory('../../../vendor/twbs/bootstrap/js');

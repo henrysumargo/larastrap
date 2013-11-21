@@ -6,7 +6,7 @@
 		<meta charset="utf-8" />
 		<title>
 			@section('title')
-			Laravel 4 Sample Site
+			Shipment & Delivery
 			@show
 		</title>
 		<meta name="keywords" content="your, awesome, keywords, here" />
@@ -57,22 +57,14 @@
                 <div class="collapse navbar-collapse navbar-ex1-collapse">
                     <ul class="nav navbar-nav">
 						<li {{ (Request::is('/') ? ' class="active"' : '') }}><a href="{{{ URL::to('') }}}">Home</a></li>
+						@if(Auth::check())
+						<li {{ (Request::is('/') ? ' class="active"' : '') }}><a href="{{{ URL::to('/logout') }}}">Logout</a></li>
+						@endif
 					</ul>
 
-                    <ul class="nav navbar-nav pull-right">
-                        @if (Auth::check())
-                        @if (Auth::user()->hasRole('admin'))
-                        <li><a href="{{{ URL::to('admin') }}}">Admin Panel</a></li>
-                        @endif
-                        <li><a href="{{{ URL::to('user') }}}">Logged in as {{{ Auth::user()->username }}}</a></li>
-                        <li><a href="{{{ URL::to('user/logout') }}}">Logout</a></li>
-                        @else
-                        <li {{ (Request::is('user/login') ? ' class="active"' : '') }}><a href="{{{ URL::to('user/login') }}}">Login</a></li>
-                        <li {{ (Request::is('user/register') ? ' class="active"' : '') }}><a href="{{{ URL::to('user/create') }}}">{{{ Lang::get('site.sign_up') }}}</a></li>
-                        @endif
-                    </ul>
-					<!-- ./ nav-collapse -->
 				</div>
+
+
 			</div>
 		</div>
 		<!-- ./ navbar -->
@@ -80,7 +72,8 @@
 		<!-- Container -->
 		<div class="container">
 			<!-- Notifications -->
-			@include('notifications')
+			<?php //comment notif error etc ?>
+			{{-- @include('notifications') --}}
 			<!-- ./ notifications -->
 
 			<!-- Content -->
@@ -97,7 +90,7 @@
 
 	    <div id="footer">
 	      <div class="container">
-	        <!-- <p class="muted credit">Laravel 4 Starter Site on <a href="https://github.com/andrew13/Laravel-4-Bootstrap-Starter-Site">Github</a>.</p> -->
+	        
 	      </div>
 	    </div>
 
